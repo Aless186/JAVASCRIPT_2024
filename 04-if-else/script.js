@@ -67,3 +67,74 @@ Nullish = false ?? "desna";
 Nullish = undefined ?? "desna";
 
 console.log(Nullish);
+
+// && će vratiti prvu falsy vrijednost ili zadnju truthy vrijednost
+let x;
+
+x = 10 && 20;
+x = 10 && 20 && 30;
+x = 10 && 0 && 20;
+x = 10 && "" && 0 && 20;
+
+console.log(x);
+
+// lista
+
+let lista = [];
+
+console.log(lista[0]);
+
+// primjer; lista.length nije veća od nule, samim time se neće odvrtiti console.log desno od && operanda
+
+lista.length > 0 && console.log(lista[0]);
+
+// ovdje imamo članove liste, samim time je dužina liste veća od 0 i console.log će se ispisati
+
+lista [1, 2];
+lista.length >0 && console.log(lista[0]);
+
+// || će vratiti prvu truthy vrijednost ili zadnju falsy vrijednost
+
+let y;
+y = 10 || 20;
+y = 0 || 20;
+y = 0 || null || "" || undefined; //izbacit će undefined jer je to zadnja falsy vrijednost
+
+console.log(y);
+
+// par primjera primjene ovakve sintakse prilikom definiranja vrijednosti varijable
+
+let a = false;
+
+if (!a) {
+    a=10
+}
+
+// ista stvar koristeći || operater
+
+a = a || 10;
+
+console.log(a);
+
+// još kraći način pisanja
+
+a ||= 10;
+console.log(a);
+
+// -----------------------------------------
+
+let b = 20;
+
+if (b) {
+    b =30;
+}
+
+b = b && 40;
+b &&= 50;
+
+console.log(b);
+
+// ista stvar koristeći ?? operator
+
+let c = undefined;
+
